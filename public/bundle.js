@@ -23964,7 +23964,8 @@
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
-	var base = _reBase2['default'].createClass('https://blazing-heat-1719.firebaseio.com/');
+	//var base = Rebase.createClass('https://blazing-heat-1719.firebaseio.com/');
+	var base = _reBase2['default'].createClass('https://github-note-taker.firebaseio.com/');
 
 	var Profile = (function (_React$Component) {
 	    _inherits(Profile, _React$Component);

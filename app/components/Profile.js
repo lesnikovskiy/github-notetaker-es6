@@ -5,7 +5,8 @@ import Notes from './Notes/Notes';
 import helpers from '../utils/helpers';
 import Rebase from 're-base';
 
-var base = Rebase.createClass('https://blazing-heat-1719.firebaseio.com/');
+//var base = Rebase.createClass('https://blazing-heat-1719.firebaseio.com/');
+var base = Rebase.createClass('https://github-note-taker.firebaseio.com/');
 
 class Profile extends React.Component {
     constructor(props) {
