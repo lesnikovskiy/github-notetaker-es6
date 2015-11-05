@@ -6,14 +6,14 @@ import helpers from '../utils/helpers';
 
 class Profile extends React.Component {
     constructor(props) {
-        debugger;
-        super(props);
-        this.state = {
+		super(props);
+		this.state = {
             notes: [],
             bio: {},
             repos: []
         };
-    }
+	}
+	
     init() {
         helpers.getGithubInfo(this.router.getCurrentParams().username)
             .then(function (dataObj) {

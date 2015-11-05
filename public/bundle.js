@@ -23815,8 +23815,8 @@
 
 	var _reactRouter2 = _interopRequireDefault(_reactRouter);
 
-	var SearchGithub = (function (_React$component) {
-	    _inherits(SearchGithub, _React$component);
+	var SearchGithub = (function (_React$Component) {
+	    _inherits(SearchGithub, _React$Component);
 
 	    function SearchGithub() {
 	        _classCallCheck(this, SearchGithub);
@@ -23861,7 +23861,7 @@
 	    }]);
 
 	    return SearchGithub;
-	})(_react2['default'].component);
+	})(_react2['default'].Component);
 
 	SearchGithub.contextTypes = {
 	    router: _react2['default'].PropTypes.func.isRequired
@@ -23956,7 +23956,7 @@
 
 	var _NotesNotes2 = _interopRequireDefault(_NotesNotes);
 
-	var _utilsHelpers = __webpack_require__(211);
+	var _utilsHelpers = __webpack_require__(209);
 
 	var _utilsHelpers2 = _interopRequireDefault(_utilsHelpers);
 
@@ -23966,7 +23966,6 @@
 	    function Profile(props) {
 	        _classCallCheck(this, Profile);
 
-	        debugger;
 	        _get(Object.getPrototypeOf(Profile.prototype), 'constructor', this).call(this, props);
 	        this.state = {
 	            notes: [],
@@ -24153,16 +24152,16 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var UserProfiles = (function (_React$Component) {
-	    _inherits(UserProfiles, _React$Component);
+	var UserProfile = (function (_React$Component) {
+	    _inherits(UserProfile, _React$Component);
 
-	    function UserProfiles() {
-	        _classCallCheck(this, UserProfiles);
+	    function UserProfile() {
+	        _classCallCheck(this, UserProfile);
 
-	        _get(Object.getPrototypeOf(UserProfiles.prototype), "constructor", this).apply(this, arguments);
+	        _get(Object.getPrototypeOf(UserProfile.prototype), "constructor", this).apply(this, arguments);
 	    }
 
-	    _createClass(UserProfiles, [{
+	    _createClass(UserProfile, [{
 	        key: "render",
 	        value: function render() {
 	            return _react2["default"].createElement(
@@ -24238,15 +24237,15 @@
 	        }
 	    }]);
 
-	    return UserProfiles;
+	    return UserProfile;
 	})(_react2["default"].Component);
 
-	UserProfiles.propTypes = {
+	UserProfile.propTypes = {
 	    username: _react2["default"].PropTypes.string.isRequired,
 	    bio: _react2["default"].PropTypes.object.isRequired
 	};
 
-	exports["default"] = UserProfiles;
+	exports["default"] = UserProfile;
 	module.exports = exports["default"];
 
 /***/ },
@@ -24450,9 +24449,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 209 */,
-/* 210 */,
-/* 211 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24463,7 +24460,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _axios = __webpack_require__(212);
+	var _axios = __webpack_require__(210);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -24490,21 +24487,21 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 212 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(213);
+	module.exports = __webpack_require__(211);
 
 /***/ },
-/* 213 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(214);
-	var utils = __webpack_require__(215);
-	var dispatchRequest = __webpack_require__(216);
-	var InterceptorManager = __webpack_require__(223);
+	var defaults = __webpack_require__(212);
+	var utils = __webpack_require__(213);
+	var dispatchRequest = __webpack_require__(214);
+	var InterceptorManager = __webpack_require__(221);
 
 	var axios = module.exports = function (config) {
 	  // Allow for axios('example/url'[, config]) a la fetch API
@@ -24551,7 +24548,7 @@
 	axios.all = function (promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(224);
+	axios.spread = __webpack_require__(222);
 
 	// Expose interceptors
 	axios.interceptors = {
@@ -24590,12 +24587,12 @@
 
 
 /***/ },
-/* 214 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -24658,7 +24655,7 @@
 
 
 /***/ },
-/* 215 */
+/* 213 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24913,7 +24910,7 @@
 
 
 /***/ },
-/* 216 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24930,11 +24927,11 @@
 	    try {
 	      // For browsers use XHR adapter
 	      if ((typeof XMLHttpRequest !== 'undefined') || (typeof ActiveXObject !== 'undefined')) {
-	        __webpack_require__(217)(resolve, reject, config);
+	        __webpack_require__(215)(resolve, reject, config);
 	      }
 	      // For node use HTTP adapter
 	      else if (typeof process !== 'undefined') {
-	        __webpack_require__(217)(resolve, reject, config);
+	        __webpack_require__(215)(resolve, reject, config);
 	      }
 	    } catch (e) {
 	      reject(e);
@@ -24946,18 +24943,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 217 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	/*global ActiveXObject:true*/
 
-	var defaults = __webpack_require__(214);
-	var utils = __webpack_require__(215);
-	var buildUrl = __webpack_require__(218);
-	var parseHeaders = __webpack_require__(219);
-	var transformData = __webpack_require__(220);
+	var defaults = __webpack_require__(212);
+	var utils = __webpack_require__(213);
+	var buildUrl = __webpack_require__(216);
+	var parseHeaders = __webpack_require__(217);
+	var transformData = __webpack_require__(218);
 
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  // Transform request data
@@ -25017,8 +25014,8 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(221);
-	    var urlIsSameOrigin = __webpack_require__(222);
+	    var cookies = __webpack_require__(219);
+	    var urlIsSameOrigin = __webpack_require__(220);
 
 	    // Add xsrf header
 	    var xsrfValue = urlIsSameOrigin(config.url) ?
@@ -25068,12 +25065,12 @@
 
 
 /***/ },
-/* 218 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -25133,12 +25130,12 @@
 
 
 /***/ },
-/* 219 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	/**
 	 * Parse headers into an object
@@ -25173,12 +25170,12 @@
 
 
 /***/ },
-/* 220 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	/**
 	 * Transform the data for a request or a response
@@ -25198,7 +25195,7 @@
 
 
 /***/ },
-/* 221 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25209,7 +25206,7 @@
 	 *  Please see lib/utils.isStandardBrowserEnv before including this file.
 	 */
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	module.exports = {
 	  write: function write(name, value, expires, path, domain, secure) {
@@ -25247,7 +25244,7 @@
 
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25258,7 +25255,7 @@
 	 *  Please see lib/utils.isStandardBrowserEnv before including this file.
 	 */
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 	var msie = /(msie|trident)/i.test(navigator.userAgent);
 	var urlParsingNode = document.createElement('a');
 	var originUrl;
@@ -25311,12 +25308,12 @@
 
 
 /***/ },
-/* 223 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(215);
+	var utils = __webpack_require__(213);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -25369,7 +25366,7 @@
 
 
 /***/ },
-/* 224 */
+/* 222 */
 /***/ function(module, exports) {
 
 	'use strict';

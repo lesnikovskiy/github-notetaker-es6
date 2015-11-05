@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'react-router';
 
-class SearchGithub extends React.component {
+class SearchGithub extends React.Component {
     handleSubmit() {
         var router = this.context.router;
         var username = this.refs.username.getDOMNode().value;
